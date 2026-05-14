@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hampi_stays/core/theme/hampi_theme.dart';
 import 'package:hampi_stays/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:hampi_stays/features/auth/presentation/auth_screen.dart';
+import 'package:hampi_stays/features/discovery/presentation/discovery_screen.dart';
 
 void main() {
   runApp(
@@ -41,7 +42,7 @@ final _router = GoRouter(
     // Placeholder routes for Phase 2+
     GoRoute(
       path: '/traveller/home',
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Traveller Home'))),
+      builder: (context, state) => const DiscoveryScreen(),
     ),
     GoRoute(
       path: '/owner/dashboard',
