@@ -9,6 +9,8 @@ import 'package:hampi_stays/features/booking/presentation/booking_screen.dart';
 import 'package:hampi_stays/features/booking/presentation/checkout_screen.dart';
 import 'package:hampi_stays/features/profile/presentation/traveller_dashboard.dart';
 import 'package:hampi_stays/features/profile/presentation/profile_screen.dart';
+import 'package:hampi_stays/features/owner/presentation/owner_dashboard.dart';
+import 'package:hampi_stays/features/owner/presentation/owner_onboarding_screen.dart';
 
 void main() {
   runApp(
@@ -66,7 +68,11 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/owner/dashboard',
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Owner Dashboard'))),
+      builder: (context, state) => const OwnerDashboard(),
+    ),
+    GoRoute(
+      path: '/owner/onboarding',
+      builder: (context, state) => const OwnerOnboardingScreen(),
     ),
   ],
 );
