@@ -54,7 +54,7 @@ final class SecureStorageProvider
   }
 }
 
-String _$secureStorageHash() => r'9005f3948067dc99e23856b40aa14612f85932cf';
+String _$secureStorageHash() => r'61735a68d565edc5db64da891b5f3ca24dc31e93';
 
 @ProviderFor(biometricService)
 final biometricServiceProvider = BiometricServiceProvider._();
@@ -100,4 +100,4 @@ final class BiometricServiceProvider
   }
 }
 
-String _$biometricServiceHash() => r'51ac852c4c43a4fb54e785cf2c4edb1c487ec173';
+String _$biometricServiceHash() => r'6d940c134a6ef2b625278ea612dff245ad22b827';

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:hampi_stays/core/theme/hampi_theme.dart';
 
-part 'booking_controller.g.dart';
+part 'booking_screen.g.dart';
 
 @riverpod
 class BookingController extends _$BookingController {

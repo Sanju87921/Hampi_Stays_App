@@ -51,7 +51,7 @@ class BiometricService {
 
 // 📡 Providers
 @riverpod
-SecureStorageService secureStorage(Ref ref) => SecureStorageService();
+SecureStorageService secureStorage(SecureStorageRef ref) => SecureStorageService();
 
 @riverpod
-BiometricService biometricService(Ref ref) => BiometricService();
+BiometricService biometricService(BiometricServiceRef ref) => BiometricService();

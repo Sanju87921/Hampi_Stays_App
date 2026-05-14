@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hampi_stays/core/theme/hampi_theme.dart';
 
 class OwnerDashboard extends StatelessWidget {
@@ -56,7 +57,7 @@ class OwnerDashboard extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.pushNamed(context, '/owner/onboarding'), // Mock route
+        onPressed: () => context.push('/owner/onboarding'),
         backgroundColor: HampiTheme.mutedGold,
         label: const Text('ADD NEW PROPERTY'),
         icon: const Icon(Icons.add),

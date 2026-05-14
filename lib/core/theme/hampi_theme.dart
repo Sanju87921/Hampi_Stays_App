@@ -43,7 +43,7 @@ class HampiTheme {
         ),
         displayMedium: GoogleFonts.playfairDisplay(
           fontSize: 32,
-          fontWeight: FontWeight.semiBold,
+          fontWeight: FontWeight.w600,
           color: deepNavy,
           letterSpacing: -0.01 * 32,
         ),
