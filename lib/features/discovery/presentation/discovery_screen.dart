@@ -157,36 +157,39 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildNavItem(Icons.explore, true),
-            _buildNavItem(Icons.favorite_outline, false),
-            _buildNavItem(Icons.confirmation_number_outlined, false),
-            _buildNavItem(Icons.person_outline, false),
+            _buildNavItem(context, Icons.explore, true, '/traveller/home'),
+            _buildNavItem(context, Icons.favorite_outline, false, '/traveller/dashboard'),
+            _buildNavItem(context, Icons.confirmation_number_outlined, false, '/traveller/dashboard'),
+            _buildNavItem(context, Icons.person_outline, false, '/traveller/profile'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildNavItem(IconData icon, bool isActive) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: isActive ? HampiTheme.mutedGold : HampiTheme.warmIvory.withOpacity(0.5),
-          size: 26,
-        ),
-        if (isActive)
-          Container(
-            margin: const EdgeInsets.only(top: 4),
-            width: 4,
-            height: 4,
-            decoration: const BoxDecoration(
-              color: HampiTheme.mutedGold,
-              shape: BoxShape.circle,
-            ),
+  Widget _buildNavItem(BuildContext context, IconData icon, bool isActive, String route) {
+    return InkWell(
+      onTap: () => context.go(route),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: isActive ? HampiTheme.mutedGold : HampiTheme.warmIvory.withOpacity(0.5),
+            size: 26,
           ),
-      ],
+          if (isActive)
+            Container(
+              margin: const EdgeInsets.only(top: 4),
+              width: 4,
+              height: 4,
+              decoration: const BoxDecoration(
+                color: HampiTheme.mutedGold,
+                shape: BoxShape.circle,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
