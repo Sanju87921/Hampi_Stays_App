@@ -1,9 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-part 'auth_service.g.dart';
 
 /// 🔐 Secure Storage Service for managing JWT tokens and sessions
 class SecureStorageService {
@@ -38,10 +35,6 @@ class BiometricService {
       
       return await _auth.authenticate(
         localizedReason: 'Please authenticate to access your HampiStays sanctuary',
-        options: const AuthenticationOptions(
-          stickyAuth: true,
-          biometricOnly: true,
-        ),
       );
     } catch (e) {
       return false;
@@ -50,8 +43,10 @@ class BiometricService {
 }
 
 // 📡 Providers
-@riverpod
-SecureStorageService secureStorage(SecureStorageRef ref) => SecureStorageService();
+final secureStorageProvider = Provider<SecureStorageService>((ref) {
+  return SecureStorageService();
+});
 
-@riverpod
-BiometricService biometricService(BiometricServiceRef ref) => BiometricService();
+final biometricServiceProvider = Provider<BiometricService>((ref) {
+  return BiometricService();
+});

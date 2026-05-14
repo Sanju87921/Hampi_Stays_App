@@ -74,7 +74,7 @@ class HampiTheme {
       ),
 
       // UI Style Guide (Depth & Radius)
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: sandstone,
         elevation: 0,
         shape: RoundedRectangleBorder(

@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:hampi_stays/core/theme/hampi_theme.dart';
 
-part 'booking_screen.g.dart';
-
-@riverpod
-class BookingController extends _$BookingController {
-  @override
-  Map<String, dynamic> build() {
-    return {
+class BookingController extends StateNotifier<Map<String, dynamic>> {
+  BookingController() : super({
       'step': 0,
       'selectedRoomId': null,
       'resortId': null,
       'addOns': [],
       'totalPrice': 0.0,
-    };
-  }
+    });
 
   void selectRoom(String roomId, double price) {
     state = {...state, 'selectedRoomId': roomId, 'totalPrice': price, 'step': 1};
@@ -32,6 +25,10 @@ class BookingController extends _$BookingController {
     }
   }
 }
+
+final bookingControllerProvider = StateNotifierProvider<BookingController, Map<String, dynamic>>((ref) {
+  return BookingController();
+});
 
 class RoomSelectionScreen extends ConsumerWidget {
   final String resortName;
