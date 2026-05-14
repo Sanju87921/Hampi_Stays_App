@@ -11,6 +11,7 @@ import 'package:hampi_stays/features/profile/presentation/traveller_dashboard.da
 import 'package:hampi_stays/features/profile/presentation/profile_screen.dart';
 import 'package:hampi_stays/features/owner/presentation/owner_dashboard.dart';
 import 'package:hampi_stays/features/owner/presentation/owner_onboarding_screen.dart';
+import 'package:hampi_stays/features/owner/presentation/pricing_availability_screen.dart';
 
 void main() {
   runApp(
@@ -73,6 +74,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/owner/onboarding',
       builder: (context, state) => const OwnerOnboardingScreen(),
+    ),
+    GoRoute(
+      path: '/owner/pricing_availability',
+      builder: (context, state) => const PricingAvailabilityScreen(),
     ),
   ],
 );

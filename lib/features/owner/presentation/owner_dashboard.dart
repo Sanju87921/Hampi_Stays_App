@@ -126,13 +126,35 @@ class OwnerDashboard extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: HampiTheme.mutedGold.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(status, style: const TextStyle(color: HampiTheme.mutedGold, fontSize: 10, fontWeight: FontWeight.bold)),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                decoration: BoxDecoration(
+                  color: HampiTheme.mutedGold.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(status, style: const TextStyle(color: HampiTheme.mutedGold, fontSize: 10, fontWeight: FontWeight.bold)),
+              ),
+              const SizedBox(height: 12),
+              GestureDetector(
+                onTap: () => context.push('/owner/pricing_availability'),
+                child: Row(
+                  children: [
+                    Text(
+                      'Manage',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: HampiTheme.warmIvory,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    const SizedBox(width: 4),
+                    const Icon(Icons.arrow_forward_ios, size: 10, color: HampiTheme.mutedGold),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
