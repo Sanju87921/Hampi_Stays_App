@@ -124,7 +124,7 @@
 ---
 
 ## 📈 10. SCALABILITY ROADMAP
-- [ ] **Localization (i18n)**: English and Hindi support as priority languages.
+- [ ] **Localization (i18n)**: English and Hindi and Kannada support as priority languages.
 - [ ] **Modularization**: Splitting features into local packages (`features/auth`, `features/booking`).
 - [ ] **AI-Powered Recommendations**: Client-side logic for personalized resort suggestions.
 - [ ] **Expert Guide Marketplace**: Expansion phase to include Local Guides and Activities.

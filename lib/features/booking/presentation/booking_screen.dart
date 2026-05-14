@@ -30,6 +30,7 @@ final bookingControllerProvider = StateNotifierProvider<BookingController, Map<S
   return BookingController();
 });
 
+
 class RoomSelectionScreen extends ConsumerWidget {
   final String resortName;
 
