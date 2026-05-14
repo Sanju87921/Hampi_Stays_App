@@ -5,6 +5,8 @@ import 'package:hampi_stays/core/theme/hampi_theme.dart';
 import 'package:hampi_stays/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:hampi_stays/features/auth/presentation/auth_screen.dart';
 import 'package:hampi_stays/features/discovery/presentation/discovery_screen.dart';
+import 'package:hampi_stays/features/booking/presentation/booking_screen.dart';
+import 'package:hampi_stays/features/booking/presentation/checkout_screen.dart';
 
 void main() {
   runApp(
@@ -43,6 +45,14 @@ final _router = GoRouter(
     GoRoute(
       path: '/traveller/home',
       builder: (context, state) => const DiscoveryScreen(),
+    ),
+    GoRoute(
+      path: '/booking/rooms',
+      builder: (context, state) => const RoomSelectionScreen(resortName: 'Evolve Back Hampi'),
+    ),
+    GoRoute(
+      path: '/booking/checkout',
+      builder: (context, state) => const CheckoutScreen(),
     ),
     GoRoute(
       path: '/owner/dashboard',
